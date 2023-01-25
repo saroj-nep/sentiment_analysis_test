@@ -2,169 +2,183 @@
 <html>
 
 <head>
-    <title>Your Parcel Bot</title>
-    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
     <style>
+        /* Add a responsive layout for the container */
+        .container {
+            width: 70%;
+            padding-right: 50px;
+            padding-left: 50px;
+            margin-right: auto;
+            margin-left: auto;
+        }
 
+        /* Add styles for the header */
+        header {
+            background-color: #12343b;
+            color: #fff;
+            text-align: center;
+            padding: 1rem;
+        }
 
+        /* Add styles for the description */
+        .description {
+            text-align: left;
+            padding: 1rem;
+            color: #fff;
+        }
 
-.toggle {
-    margin:0 0 0 1rem;
-    position: relative;
-    display: inline-block;
-    width: 3rem;
-    height: 1.7rem;
-}
+        /* Add styles for the iframe */
+        iframe {
+            width: 100%;
+            height: 50vh;
+            border: none;
+        }
+             .toggle {
+            margin: 0 0 0 1rem;
+            position: relative;
+            display: inline-block;
+            width: 3rem;
+            height: 1.7rem;
+        }
 
-.toggle input {
-    display: none;
-}
+        .toggle input {
+            display: none;
+        }
 
-.roundbutton {
-    position: absolute;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    right: 0;
-    width: 100%;
-    background-color: #33455e;
-    display: block;
-    transition: all 0.3s;
-    border-radius: 1.7rem;
-    cursor: pointer;
-}
+        .roundbutton {
+            position: absolute;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            width: 100%;
+            background-color: #33455e;
+            display: block;
+            transition: all 0.3s;
+            border-radius: 1.7rem;
+            cursor: pointer;
+        }
 
-.roundbutton:before {
-    position: absolute;
-    content: "";
-    height: 1.2rem;
-    width: 1.25rem;
-    border-radius: 100%;
-    display: block;
-    left: 0.25rem;
-    bottom: 0.25rem;
-    background-color: white;
-    transition: all 0.3s;
-}
+        .roundbutton:before {
+            position: absolute;
+            content: "";
+            height: 1.2rem;
+            width: 1.25rem;
+            border-radius: 100%;
+            display: block;
+            left: 0.25rem;
+            bottom: 0.25rem;
+            background-color: white;
+            transition: all 0.3s;
+        }
 
-input:checked + .roundbutton {
-    background-color: #2a9f4b;
-}
+        input:checked+.roundbutton {
+            background-color: #2a9f4b;
+        }
 
-input:checked + .roundbutton:before  {
-    transform: translate(1.3rem, 0);
-}
-
-</style>
-
-<script type="text/javascript">
-   function togglefunction(){
+        input:checked+.roundbutton:before {
+            transform: translate(1.3rem, 0);
+        }
+    </style>
+ <script>
+    function togglefunction() {
         var input = document.getElementById('toggleswitch');
-            var outputtext = document.getElementById('status');
+        var outputtext = document.getElementById('status');
+        var tasksdescription = document.getElementById('tasksdescription');
 
-            input.addEventListener('change', function () {
-                if (this.checked) {
-                    tasksdescription.style.display = "block";
-                    outputtext.innerHTML="Hide"
-                } else {
-                    outputtext.innerHTML = "Show"
-                    tasksdescription.style.display = "none";
-                }
-            });
-                }
-
+        input.addEventListener('change', function () {
+            if (this.checked) {
+                tasksdescription.style.display = "block";
+                outputtext.innerHTML = "Hide"
+            } else {
+                tasksdescription.style.display = "none";
+                outputtext.innerHTML = "Show"
+            }
+        });
+    }
 </script>
+
 </head>
 
-<body style="background-color:#12343b; ">
-    <header class="w3-container w3-padding-32">
-        <div class="w3-display-topmiddle" style="margin-top:2%; margin-left:1%">
-             <img src="ParcelCheck.png" style="max-width:20vh; height: auto;">
+<body style="background-color:#12343b">
+    <div class="container">
+        <header>
+            <img src="ParcelCheck.png" style="max-width:20vh; height: auto;">
+        </header>
+
+        <div class="description">
+            <p>Hello there! Welcome to PARCELCHECK, and thank you for your participation in the study involving our
+                chatbot 'ParcelCheck'. The study is divided into two parts:</p>
+          
+              
+        <li>Conversation with the chatbot (~10 minutes)</li>
+        <li>Post-chat survey (~10 minutes)</li>
+        <br>
+            First of all, you will need to complete some tasks with the help from the chatbot.After, the chatbot
+            will provide you the link to the survey.
+            Your tasks:
+            <br>
+        <p style="color:aqua">
+            <span class="w3-text-white"><b>Task 1:</b></span> Suppose you are one of our customers and have been
+            waiting for a parcel. Your parcel's tracking number is <span class="w3-text-red">123456</span>. The
+            parcel has not arrived to you yet, and you are curious about the status of the delivery.
+            Find out about the status of your parcel by conversing with the chatbot.<br><br>
+        
+            <span class="w3-text-white"><b>Task 2:</b></span> You need to send a parcel to a foreign country. You do
+            not know about the cost, procedures and time taken for sending the parcel. Find these information out by
+            conversing with the chatbot.
+            <br><br>
+            <span class="w3-text-white"><b>Task 3:</b></span>Think of a hypothetical issue relevant to parcel
+            deilvery service. Try to solve the issue with the help of the chatbot.
+            <br><br>
+            <span class="w3-text-red"><b>Important!</b></span> Based on your interaction with the chatbot, your
+            conversation might end before you have completed all the tasks. In such case, simply follow the link to
+            the survey to complete the 2nd part of the survey. For convenience, the task descriptions can be toggled
+            on the right side of the chatbot.
+            <br>
+        </p>
+        </p>
+        <p style="color: rgb(255, 255, 255); text-align: center;">&darr; Scroll below to find the 'Parcelcheck' bot.
+            It is ready to welcome and help you &darr; </p><br><br>
         </div>
-        <div class="w3-display-topmiddle" style="margin-top:10%;">
-            <p style="color: rgb(255, 255, 255);">Hello there! Welcome to PARCELCHECK, and thank you for your
-                participation in the study involving our chatbot 'ParcelCheck'.
-                The study is divided into two parts: <br><br>
 
-                1) Conversation with the chatbot (~10 minutes)<br>
-                2) Post-chat survey (~10 minutes)<br></br>
-    
-                First of all, you will need to complete some tasks with the help from the chatbot.After, the chatbot will provide you the link to the survey.
-                Your tasks:
-                <br>
-            <p style="color:aqua">
-                <span class="w3-text-white"><b>Task 1:</b></span> Suppose you are one of our customers and have been
-                waiting for a parcel. Your parcel's tracking number is <span class="w3-text-red">123456</span>. The
-                parcel has not arrived to you yet, and you are curious about the status of the delivery.
-                Find out about the status of your parcel by conversing with the chatbot.<br><br>
-
-                <span class="w3-text-white"><b>Task 2:</b></span> You need to send a parcel to a foreign country. You do
-                not know about the cost, procedures and time taken for sending the parcel. Find these information out by
+    <div style="display: flex; padding-top: 25%; padding-bottom: 10%;">
+        <iframe
+            src='https://webchat.botframework.com/embed/sentiment-analysis-test?s=EbZrzTpmfC8.gmAw_roIfmS0WeT-PPhNZwfWzKyURZ0AmWXxQEtJ7zg'
+            style="flex: 2; "></iframe>
+        <div class="w3-small" style="flex: 1; padding-left: 5%;">
+            <span class="w3-text-white"><b>Your tasks:</b></span>
+            <label class="toggle">
+                <input id="toggleswitch" type="checkbox" onclick="togglefunction()">
+                <div class="roundbutton"></div>
+                <span id="status" class="toggle-label w3-text-white" style="margin-left: 120%;">Show</span>
+            </label>
+            <p id="tasksdescription" style="color:aqua;display: none;">
+                <span class="w3-text-white"><b>Task 1:</b></span> Suppose you are one of our customers and have been waiting
+                for a parcel. Your parcel's tracking number is <span class="w3-text-red">123456</span>. The parcel has not
+                arrived to you yet, and you are curious about the status of the delivery. Find out about the status of your
+                parcel by conversing with the chatbot.<br><br>
+                <span class="w3-text-white"><b>Task 2:</b></span> You need to send a parcel to a foreign country. You do not
+                know about the cost, procedures and time taken for sending the parcel. Find these information out by
                 conversing with the chatbot.
                 <br><br>
-                <span class="w3-text-white"><b>Task 3:</b></span>Think of a hypothetical issue relevant to parcel
-                deilvery service. Try to solve the issue with the help of the chatbot.
+                <span class="w3-text-white"><b>Task 3:</b></span>Think of a hypothetical issue relevant to parcel delivery
+                service. Try to solve the issue with the help of the chatbot.
                 <br><br>
                 <span class="w3-text-red"><b>Important!</b></span> Based on your interaction with the chatbot, your
-                conversation might end before you have completed all the tasks. In such case, simply follow the link to
-                the survey to complete the 2nd part of the survey. For convenience, the task descriptions can be toggled on the right side of the chatbot.
-                <br>
+                conversation might end before you have completed all the tasks. In such case, simply follow the link to the
+                survey to complete the 2nd part of the survey.
+                <br><br>
             </p>
-            </p>
-            <p style="color: rgb(255, 255, 255); text-align: center;">&darr; Scroll below to find the 'Parcelcheck' bot.
-                It is ready to welcome and help you &darr; </p>
-
-
+        </div>
+    </div>
 
         </div>
-
-
-
-    </header>
-
-    <div class="w3-row" style="margin-top:60%;" >
-        <div class="w3-third w3-container">
-    <iframe
-        src='https://webchat.botframework.com/embed/sentiment-analysis-test?s=EbZrzTpmfC8.gmAw_roIfmS0WeT-PPhNZwfWzKyURZ0AmWXxQEtJ7zg'
-        style=' min-width: 600px ; width: 80%; min-height: 500px;  margin-bottom: 10% ; margin-left:40%; margin-right:1%;'>
-    </iframe>
-</div>
-<div class="w3-third w3-container w3-small" style="margin-left:30% ;">
-    <span class="w3-text-white"><b>Your tasks:</b></span>
-<label class="toggle">
-    <input id="toggleswitch" type="checkbox" onclick="togglefunction()">
-    <div class="roundbutton"></div>
-    <span id ="status" class="toggle-label w3-text-white" style="margin-left: 120%;">Show</span>
-</label>
-<p id="tasksdescription" style="color:aqua;display: none;">
-    <span class="w3-text-white"><b>Task 1:</b></span> Suppose you are one of our customers and have been
-    waiting for a parcel. Your parcel's tracking number is <span class="w3-text-red">123456</span>. The
-    parcel has not arrived to you yet, and you are curious about the status of the delivery.
-    Find out about the status of your parcel by conversing with the chatbot.<br><br>
-
-    <span class="w3-text-white"><b>Task 2:</b></span> You need to send a parcel to a foreign country. You do
-    not know about the cost, procedures and time taken for sending the parcel. Find these information out by
-    conversing with the chatbot.
-    <br><br>
-    <span class="w3-text-white"><b>Task 3:</b></span>Think of a hypothetical issue relevant to parcel
-    deilvery service. Try to solve the issue with the help of the chatbot.
-    <br><br>
-    <span class="w3-text-red"><b>Important!</b></span> Based on your interaction with the chatbot, your
-    conversation might end before you have completed all the tasks. In such case, simply follow the link to
-    the survey to complete the 2nd part of the survey.
-    <br><br>
-</p>
-
-
-
-</div>
-    </div>
 </body>
 
 </html>
